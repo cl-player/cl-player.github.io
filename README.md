@@ -40,32 +40,30 @@ Bands not listed are disabled or at 0 dB. All presets use a preamp of 0 dB. Band
 ##### Flat
 All bands at 0 dB.
 
-画像挿入
-
 ##### Bright
 60 Hz low shelf +3 dB; 2.5 kHz peak +6 dB (Q 2).
 
-画像挿入
+![Bright](./image/eq-bright.jpg)
 
 ##### Exciting
 60 Hz low shelf +10 dB; 6.3 kHz peak +6 dB (Q 0.5); 16 kHz peak +9 dB (Q 0.5).
 
-画像挿入
+![Exciting](./image/eq-exciting.jpg)
 
 ##### Mellow
 400 Hz peak +1 dB (Q 1); 1 kHz peak +2 dB (Q 0.7); 2.5 kHz peak −1 dB; 6.3 kHz peak −2 dB (Q 0.5).
 
-画像挿入
+![Mellow](./image/eq-mellow.jpg)
 
 ##### Relax
 60 Hz low shelf +3 dB; 400 Hz peak −3 dB (Q 0.7); 2.5 kHz peak +3 dB (Q 1); 16 kHz high shelf +6 dB.
 
-画像挿入
+![Relax](./image/eq-relax.jpg)
 
 ##### Vocal
 400 Hz peak +3 dB (Q 0.6); 1 kHz peak +3 dB (Q 0.6); 16 kHz high shelf −3 dB.
 
-画像挿入
+![Vocal](./image/eq-vocal.jpg)
 
 ### Interface
 - Two tabs, **Playlist** and **Playback Config**, above a fixed player bar. The Playlist tab fills the space above the tabs; the Playback Config tab (equalizer and codec list) scrolls as a page.
@@ -74,12 +72,12 @@ All bands at 0 dB.
 #### Playlist tab
 The add/clear buttons, the theme button, and the playlist. Tracks are shown in collapsible groups.
 
-画像挿入
+![Playlist](./image/main-main.PNG)
 
 #### Playback Config tab
 The equalizer and the codec list.
 
-画像挿入
+![PlaybackConfig](./image/main-eq.PNG)
 
 ## Stored data
 
