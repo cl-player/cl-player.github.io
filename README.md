@@ -9,8 +9,8 @@ A local audio player that runs in the browser, with a 10-band parametric equaliz
 - Recognized extensions: `mp3 m4a aac ogg oga opus flac wav weba webm aif aiff aifc caf mka ac3 eac3 amr 3gp mp4 wma ape wv mpga mp2`.
 - Controls: play/pause, previous/next, seek, volume. `Space` toggles play/pause.
 - **Shuffle** cycles through: off → album shuffle → all shuffle.
-  - Album shuffle plays an album in order, then moves to a not-yet-played album.
-  - All shuffle picks a random track.
+  - Album shuffle plays an album in order, then moves to a not-yet-played album, chosen in random order. Each individually added file without an album tag counts as its own album.
+  - All shuffle plays every track once in random order. With repeat off, playback stops after the last track; with repeat all, the order is reshuffled. The previous button steps back through the played history.
 - **Repeat** cycles through: off → album repeat → all repeat → single-track repeat. Album repeat takes priority over shuffle.
 - The current track's title, artist/album, and cover art are read from its tags and shown in the player.
 
@@ -40,30 +40,32 @@ Bands not listed are disabled or at 0 dB. All presets use a preamp of 0 dB. Band
 ##### Flat
 All bands at 0 dB.
 
+画像挿入
+
 ##### Bright
 60 Hz low shelf +3 dB; 2.5 kHz peak +6 dB (Q 2).
 
-![Bright](./image/eq-bright.jpg)
+画像挿入
 
 ##### Exciting
 60 Hz low shelf +10 dB; 6.3 kHz peak +6 dB (Q 0.5); 16 kHz peak +9 dB (Q 0.5).
 
-![Exciting](./image/eq-exciting.jpg)
+画像挿入
 
 ##### Mellow
 400 Hz peak +1 dB (Q 1); 1 kHz peak +2 dB (Q 0.7); 2.5 kHz peak −1 dB; 6.3 kHz peak −2 dB (Q 0.5).
 
-![Mellow](./image/eq-mellow.jpg)
+画像挿入
 
 ##### Relax
 60 Hz low shelf +3 dB; 400 Hz peak −3 dB (Q 0.7); 2.5 kHz peak +3 dB (Q 1); 16 kHz high shelf +6 dB.
 
-![Relax](./image/eq-relax.jpg)
+画像挿入
 
 ##### Vocal
 400 Hz peak +3 dB (Q 0.6); 1 kHz peak +3 dB (Q 0.6); 16 kHz high shelf −3 dB.
 
-![Vocal](./image/eq-vocal.jpg)
+画像挿入
 
 ### Interface
 - Two tabs, **Playlist** and **Playback Config**, above a fixed player bar. The Playlist tab fills the space above the tabs; the Playback Config tab (equalizer and codec list) scrolls as a page.
@@ -72,12 +74,12 @@ All bands at 0 dB.
 #### Playlist tab
 The add/clear buttons, the theme button, and the playlist. Tracks are shown in collapsible groups.
 
-![Main-Playlist](./image/main-main.PNG)
+画像挿入
 
 #### Playback Config tab
 The equalizer and the codec list.
 
-![Main-PlaybackConfig](./image/main-eq.PNG)
+画像挿入
 
 ## Stored data
 
@@ -144,6 +146,7 @@ If the app is opened offline before the first caching has finished, the icon fon
 - DRM-protected files cannot be played.
 - Playable formats depend on the browser. Formats such as WMA and APE are generally not supported.
 - Cover art and tags for Ogg/Opus files are not read.
+- On iOS/iPadOS the audio session is set to `playback` so that output continues in the background and is not muted by the silent switch. Because the equalizer routes audio through Web Audio, background behavior still depends on the OS.
 - The page disables pinch zoom (`maximum-scale=1`) to prevent focus zoom on input fields in iOS.
 - The equalizer is a parametric EQ built from Web Audio biquad filters. It does not reproduce the processing of any specific hardware or software equalizer.
 
